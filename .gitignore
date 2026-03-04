@@ -12,3 +12,7 @@ include/web_resources.h
 release/
 managed_components/
 sdkconfig*
+ccache.exe
+.ccache/
+CMakeLists.txt
+dependencies.lock

@@ -45,13 +45,16 @@ jobs:
           path: |
             ~/.platformio/packages
             ~/.platformio/platforms
+            .ccache
             ${{ matrix.cache_extra }}
           key: pio-${{ matrix.group }}-${{ hashFiles('platformio.ini') }}
           restore-keys: |
             pio-${{ matrix.group }}-
 
-      - name: Install PlatformIO + esptool
+      - name: Install PlatformIO + esptool + ccache
         run: |
+          sudo apt update
+          sudo apt install ccache
           python -m pip install --upgrade pip
           pip install --upgrade platformio esptool
 
@@ -62,7 +65,7 @@ jobs:
           for env in $ENVS; do
             CMD="$CMD -e $env"
           done
-          eval "$CMD" || (sleep 25 && echo "🔄 Retry for ${{ matrix.group }} (network?)" && eval "$CMD")
+          eval "$CMD"
 
       - name: "Upload Artifacts - ${{ matrix.group }}"
         uses: actions/upload-artifact@v7

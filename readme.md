@@ -23,10 +23,19 @@ The firmware can be flashed directly from your browser:
 - **NeoPixel RGBW:** SK6812 (includes white channel calibration known from HyperSerial).
 - **DotStar SPI:** APA102 and high-speed clocked LEDs.
 
+## Manual
+
+👉 [https://wiki.hyperhdr.eu/Hyperk](https://wiki.hyperhdr.eu/Hyperk)
+
 ## Integration
 
-- **HyperHDR:** Native support via `udpraw` and `WLED` protocols. A dedicated DDP driver coming soon to HyperHDR.
+- **HyperHDR:** Dedicated Hyperk driver (>v22beta1). Also works via its native `DDP`, `udpraw`, and `WLED` drivers.
 - **Home Assistant:** Automatic discovery with support for power on/off, color, and brightness control.
+
+|      HyperHDR      |   Home Assistant   |
+|--------------------|--------------------|
+| [![1](https://github.com/user-attachments/assets/ab252845-50da-4985-96be-d1da7bfd522d)](https://github.com/user-attachments/assets/ab252845-50da-4985-96be-d1da7bfd522d) | [![2a](https://github.com/user-attachments/assets/b3097b11-249a-4a66-9cff-bcdd70f28e87)](https://github.com/user-attachments/assets/b3097b11-249a-4a66-9cff-bcdd70f28e87) |
+
 
 ## Network Services
 
